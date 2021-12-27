@@ -6,7 +6,8 @@ import cartopy.io.img_tiles as cimgt
 from matplotlib import pyplot as plt
 import geopandas as gpd
 
-contour = gpd.read_file(r"madrisa_contour\contours\contours.shx")
+contour = gpd.read_file(r"madrisa_contour/madrisa_contours.shp")
+contour = contour[contour.geometry != None]
 
 folder = r"routes"
 routes = np.zeros(np.size(os.listdir(folder)),dtype=object)
